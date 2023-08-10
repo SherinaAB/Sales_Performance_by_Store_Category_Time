@@ -39,20 +39,21 @@ class Product(Base):
     brand = Column(String())
     category = Column(String())
     department = Column(String())
+    store_id = Column(Integer(), ForeignKey('stores.id'))
 
 
     Sale = relationship('Sale', backref=backref('proudct'))
 
-    # def __repr__(self):
-    #     return f"Id: {self.id}," \
-    #     +f"Name: {self.name}," \
-    #     +f"Product Description: {self.product_description}," \
-    #     +f"SKU: {self.sku}," \
-    #     +f"Wholesale: {self.wholesale}," \
-    #     +f"Retail: {self.retail}," \
-    #     +f"Brand: {self.brand}," \
-    #     +f"Category: {self.category}," \
-    #     +f"Department: {self.department},"
+    def __repr__(self):
+        return f"Id: {self.id}," \
+        +f"Name: {self.name}," \
+        +f"Product Description: {self.product_description}," \
+        +f"SKU: {self.sku}," \
+        +f"Wholesale: {self.wholesale}," \
+        +f"Retail: {self.retail}," \
+        +f"Brand: {self.brand}," \
+        +f"Category: {self.category}," \
+        +f"Department: {self.department},"
 
 # class Date(Base):
 #     __tablename__ = "dates"
