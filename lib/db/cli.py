@@ -69,34 +69,46 @@ dict = {"userinput": "All Options"}
 def main():
     product_id = input("Type a number: 109 - 117: ")
     product = session.query(Product).filter_by(id = product_id).first()
-    userinput = input("Type: \n Total Sales:        (to view all sales of the retail program) \n Total Cost:         (to view the total cost for your selected item) \n Total Gross Profit: (view Gross Profit $ for selected) \n\n ENTER SELECTION HERE:  ")
+    userinput = input("Type: \n Total Sales:        (view total sales for selected item) \n Total Cost:         (view total cost for selected item) \n Total Gross Profit: (view Gross Profit for selected item) \n All Options:       (view Total Sales, Total Cost, & Total Gross Profit for selected item)\n\n ENTER SELECTION HERE:  ")
     if userinput == "Total Sales":
         dollars = 0
         for sale in product.Sale:
             dollars = dollars + sale.sales_dollar_amount
-        print("$ ",dollars)
+        print("Total Sales:  $ ",dollars)
     elif userinput == "Total Cost":
         total = 0
         for sale in product.Sale: 
             total = total + sale.cost_dollar_amount
-        print("$ ",total)
+        print("Total Cost $ ",total)
     elif userinput == "Total Gross Profit":
         profit = 0
         for sale in product.Sale: 
             profit  = profit + sale.gross_profit_dollar_amount
-        print("$ ",profit)
+        print("Total Gross Profit $ ",profit)
     elif dict["userinput"] == "All Options":
-        print("hello")
+        dollars = 0
+        total = 0
+        profit = 0
+        for sale in product.Sale:
+            dollars = dollars + sale.sales_dollar_amount
+            total = total + sale.cost_dollar_amount 
+            profit = profit + sale.gross_profit_dollar_amount
+        print(" Program Sales     Program Cost     Program Gross Profit "'\n',"$   ",dollars,"     $   ", total,"     $          ", profit)
     
 if __name__ == "__main__":
     main()
 
-    # engine = create_engine('sqlite:///sales.db')
 
-        # store = session.query(Store).first()
-        # # print(store.id)
-        # store_products = session.query(Product).filter_by(store_id=store.id)
-        # print([product for product in store_products])
+
+
+
+
+
+
+
+
+
+
 
 # @cli.command()
 # @click.argument("products", nargs=-1)  # Allow passing multiple product names
