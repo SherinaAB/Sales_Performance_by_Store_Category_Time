@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine,
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, Session, session
 # import click
 # import matplotlib.pyplot as plt
@@ -68,7 +68,7 @@ def hide():
 dict = {"userinput": "All Options"}
 
 def main():
-    product_id = input("Type a number: 109 - 117: ")
+    product_id = input("Selcect Item by Typing a Number: 109 - 117: ")
     product = session.query(Product).filter_by(id = product_id).first()
     userinput = input("Type: \n Total Sales:        (view total sales for selected item) \n Total Cost:         (view total cost for selected item) \n Total Gross Profit: (view Gross Profit for selected item) \n All Options:       (view Total Sales, Total Cost, & Total Gross Profit for selected item)\n\n ENTER SELECTION HERE:  ")
     if userinput == "Total Sales":
