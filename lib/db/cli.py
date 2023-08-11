@@ -48,5 +48,54 @@ if __name__ == "__main__":
         # sale_products = session.query(Product).filter_by(sale_id=sale.id)
         # print([product for product in sale_products])
 
+        tech_store_products = [
+            {
+                "name" : "Anker PowerCore",
+                "category" : "Portable Chargers",
+                "department" : "Tech Accessories",
+            },
+            {
+                "name" : "Jackery Bolt 10050",
+                "category" : "Portable Chargers",
+                "department" : "Tech Accessories",
+            },
+            {
+                "name" : "Lifeproof Lifeactive Power Pack",
+                "category" : "Portable Chargers",
+                "department" : "Tech Accessories",
+            },
+            {
+                "name" : "Peak Design Tech Poutch", 
+                "category" : "Electronic Organizers",
+                "department" : "Organization",
+            },
+            {
+                "name" : "FYY Travel Cable Organizer Pouch",
+                "category" : "Electronic Organizers",
+                "department" : "Organization",
+            },
+            {
+                "name" : "Bellroy Tech Kit", 
+                "category" : "Electronic Organizers",
+                "department" : "Organization",
+            },
+            {
+                "name" : "Troubadour Apex Backpack", 
+                "category" : "Back Packs",
+                "department" : "Travel Bags",
+            },
+            {
+                "name" : "July Carry All Backpack Series 2", 
+                "category" : "Back Packs",
+                "department" : "Travel Bags",
+            },
+            {
+                "name" : "Everlane Renew Backpack", 
+                "category" : "Back Packs",
+                "department" : "Travel Bags",
+            },
+        ]
+
+        get_tech_store_products_by_category(tech_store_products,"Electronic Organizers")
 
     
