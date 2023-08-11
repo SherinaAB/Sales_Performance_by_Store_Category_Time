@@ -1,6 +1,7 @@
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine,
 from sqlalchemy.orm import sessionmaker, Session, session
-from contextlib import contextmanager
+# import click
+# import matplotlib.pyplot as plt
 from models import (Base, Store, Product, Sale)
 
 engine = create_engine('sqlite:///sales.db')
@@ -111,9 +112,9 @@ if __name__ == "__main__":
 
 
 # @cli.command()
-# @click.argument("products", nargs=-1)  # Allow passing multiple product names
-# @click.argument("stores", nargs=-1)    # Allow passing multiple store names
-# @click.argument("sales", nargs=-1)     # Allow passing multiple sales data
+# @click.argument('products', nargs=-1)  # Allow passing multiple product names
+# @click.argument('stores', nargs=-1)    # Allow passing multiple store names
+# @click.argument('sales', nargs=-1)     # Allow passing multiple sales data
 
 # def show_sales_chart(products, stores, sales):
 #     # Create a bar chart using Matplotlib
